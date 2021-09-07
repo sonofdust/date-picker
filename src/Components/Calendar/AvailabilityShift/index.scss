@@ -11,6 +11,10 @@
   padding-top: 30px;
 }
 
+.pigsubgroup {
+  padding-top: 5px;
+}
+
 div div {
   justify-content: space-between;
 }
@@ -24,5 +28,6 @@ div div {
   border-color: blue;
   border-width: 1px;
   border-radius: 5px;
-  width: 220px;
+  width: 250px;
+  cursor: pointer;
 }
