@@ -1,48 +1,58 @@
-import { v4 } from "uuid";
 import moment from "moment";
 import "./index.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const Day = ({
-  setSelected,
+  selectedDay,
   day,
   yearmonth,
   setAvailability,
 }: {
-  setSelected: Function;
+  selectedDay: string;
   day: number;
   yearmonth: string;
   setAvailability: Function;
 }) => {
-  const isBefore = (day: number) =>
-    moment(
-      `${moment(yearmonth).format("YYYY-MM")}-${day
-        .toString()
-        .padStart(2, "0")}`
-    ).isBefore(moment().format("YYYY-MM-DD"));
+  const [availDate, setAvailDate] = useState<string>("");
+  const [selected, setSelected] = useState<boolean>(false);
 
-  const handelCalendarAvilability = (date: string) => {
-    setSelected(`${yearmonth}-${day.toString().padStart(2, "0")}`);
-    setAvailability(date);
-  };
+  const isBefore = moment(availDate).isBefore(moment().format("YYYY-MM-DD"));
+
+  useEffect(() => {
+    const availDate = `${moment(yearmonth).format("YYYY-MM")}-${day
+      .toString()
+      .padStart(2, "0")}`;
+
+    setAvailDate(availDate);
+    setSelected(availDate === selectedDay);
+  }, [day, yearmonth]);
+
+  const selectedStyles = selected
+    ? {
+        color: "#000",
+        backgroundColor: "rgba(22, 155, 213, 1)",
+      }
+    : {
+        color: "#000",
+        transition: "0.5s",
+      };
+  const selectedspan = selected
+    ? { backgroundcolor: "rgba(22, 155, 213, 1)", color: "black" }
+    : {};
 
   return (
     <div className="rTableCell">
       {day > 0 ? (
         <div
-          key={`${yearmonth}-${day.toString().padStart(2, "0")}`}
-          onClick={() =>
-            handelCalendarAvilability(
-              `${moment(yearmonth).format("YYYY-MM")}-${day
-                .toString()
-                .padStart(2, "0")}`
-            )
-          }
-          className={isBefore(day) ? "day pastday noHover" : "day hand"}
+          onClick={() => setAvailability(availDate)}
+          className={isBefore ? "day pastday noHover" : "day hand"}
+          style={selectedStyles}
         >
-          <span className="text">{day}</span>
-          <span id={`frac_${v4()}`} className="text2">
-            {isBefore(day) ? null : "4/16"}
+          <span className="text" style={selectedspan}>
+            {day}
+          </span>
+          <span className="text2" style={selectedspan}>
+            {isBefore ? null : "4/16"}
           </span>
         </div>
       ) : (
