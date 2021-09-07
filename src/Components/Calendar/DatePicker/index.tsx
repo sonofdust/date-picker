@@ -14,7 +14,7 @@ export const DatePicker = () => {
   const [selectedDay, setSelectedDay] = useState(moment().format("YYYY-MM-DD"));
   const [shift, setShift] = useState<string>("0");
   const [calendar, setCalandar] = useState<number[][]>([]);
-  const [timePreference, setTimePrefrence] = useState(false);
+  // const [timePreference, setTimePrefrence] = useState(false);
 
   const getCalendar = (days: number, weekday: number, count = 0) =>
     Array.from({ length: 6 }, (e) => Array.from({ length: 7 }, (e) => 0)).map(
@@ -79,8 +79,8 @@ export const DatePicker = () => {
             <AvailabilityDate stringDate={available} />
             <AvailabilityShift
               setShift={shift}
-              isPreference={timePreference}
-              setPrefrence={setTimePrefrence}
+              // isPreference={timePreference}
+              // setPrefrence={(boolval:boolean)=>{setTimePrefrence(boolval);}}
             />
           </div>
         </div>

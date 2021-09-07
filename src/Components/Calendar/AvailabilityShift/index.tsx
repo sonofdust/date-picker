@@ -1,14 +1,16 @@
-import { TimePrefrence } from "../DatePicker/TimePrefrence";
 import "./index.scss";
 import { PiChart } from "./PiChart";
+import { useState } from "react";
 
 interface ICalendarAvailabilityProps {
   setShift: string;
-  isPreference: boolean;
-  setPrefrence: Function;
+  // isPreference: boolean;
+  // setPrefrence: Function;
 }
 
 export const AvailabilityShift = (props: ICalendarAvailabilityProps) => {
+  const [isTime, setTime] = useState(false);
+
   return (
     <div>
       {props.setShift === "1" || props.setShift === "0" ? (
@@ -42,18 +44,20 @@ export const AvailabilityShift = (props: ICalendarAvailabilityProps) => {
       <div className="pigroup">
         <button
           onClick={() => {
-            props.setPrefrence(!props.isPreference);
+            setTime(!isTime);
           }}
-          className="timeprefrencebtn"
+          className={
+            isTime ? "timeprefrencebtn timetogglebtn" : "timeprefrencebtn"
+          }
         >
           No Time Prefrence
         </button>
       </div>
       <div className="pigroup pigsubgroup">
-        {props.isPreference ? <h4>Selected Time:</h4> : null}
+        {isTime ? <h4>Selected Time:</h4> : null}
       </div>
       <div className="pigroup pigsubgroup">
-        {props.isPreference ? <span>No Preference</span> : null}
+        {isTime ? <span>No Preference</span> : null}
       </div>
     </div>
   );
