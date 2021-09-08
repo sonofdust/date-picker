@@ -20,7 +20,7 @@
 
 .selected span{
   background-color: rgba(22, 155, 213, 1);
-  color: black;
+  color: white;
 }
 
 .noHover {
@@ -37,7 +37,7 @@
 }
 
 .day:hover span {
-  color: black;
+  color: white;
   opacity: 1;
 }
 

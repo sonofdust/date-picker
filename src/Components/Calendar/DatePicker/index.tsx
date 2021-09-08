@@ -74,6 +74,9 @@ export const DatePicker = () => {
                 calendar={calendar}
               />
             </div>
+            <div className="bottomtext">
+              Remaining slots available per day are shown above
+            </div>
           </div>
           <div>
             <AvailabilityDate stringDate={available} />

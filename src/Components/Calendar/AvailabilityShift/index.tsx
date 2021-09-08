@@ -13,6 +13,7 @@ export const AvailabilityShift = (props: ICalendarAvailabilityProps) => {
 
   return (
     <div>
+      <div className = "container">
       {props.setShift === "1" || props.setShift === "0" ? (
         <div className="pigroup">
           <PiChart
@@ -41,7 +42,9 @@ export const AvailabilityShift = (props: ICalendarAvailabilityProps) => {
           ></PiChart>
         </div>
       ) : null}
-      <div className="pigroup">
+</div>
+
+<div className="pigroup">
         <button
           onClick={() => {
             setTime(!isTime);
@@ -53,6 +56,7 @@ export const AvailabilityShift = (props: ICalendarAvailabilityProps) => {
           No Time Prefrence
         </button>
       </div>
+
       <div className="pigroup pigsubgroup">
         {isTime ? <h4>Selected Time:</h4> : null}
       </div>

@@ -37,7 +37,7 @@ export const Day = ({
         transition: "0.5s",
       };
   const selectedspan = selected
-    ? { backgroundcolor: "rgba(22, 155, 213, 1)", color: "black" }
+    ? { backgroundcolor: "rgba(22, 155, 213, 1)", color: "white" }
     : {};
 
   return (
