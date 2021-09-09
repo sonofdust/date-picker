@@ -2,10 +2,10 @@ import { Fragment, useEffect, useState } from "react";
 import moment from "moment";
 
 import "./index.scss";
-import { AvailabilityDate } from "../AvailabilityDate";
-import { AvailabilityShift } from "../AvailabilityShift";
-import { CalendarBody } from "./CalendarBody";
-import { TimePrefrence } from "./TimePrefrence";
+import { AvailabilityDate } from "./AvailabilityDate";
+import { AvailabilityShift } from "./AvailabilityShift";
+import { CalendarBody } from "./DatePicker/CalendarBody";
+import { TimePrefrence } from "./DatePicker/TimePrefrence";
 export const DatePicker = () => {
   const [value, setValue] = useState<string>(moment().format("MMMM YYYY"));
   const [available, setAvailibility] = useState<string>(
