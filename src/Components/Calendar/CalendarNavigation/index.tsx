@@ -18,7 +18,7 @@ export const CalendarNavigation = ({
         >
           <h3 className="hand">{"<"}</h3>
         </span>
-        <h3>
+        <h3 data-testid = "Header">
           {moment(monthValue).format("MMMM") +
             " " +
             moment(monthValue).format("YYYY")}

@@ -5,12 +5,12 @@ import "./index.scss";
 import { Day } from "./Day";
 
 export const CalendarBody = ({
-  month,
+   month,
   selectedDay,
   setAvailibility,
   calendar,
 }: {
-  month: string;
+   month: string;
   selectedDay: string;
   setAvailibility: Function;
   calendar: number[][];
@@ -23,13 +23,13 @@ export const CalendarBody = ({
         ))}
       </div>
       {calendar.map((row) => (
-        <div key={`${v4()}`} className="rTableRow">
+        <div className="rTableRow">
           {row.map((day: number, i: number) => (
             <Day
               key={`${day}-${i}`}
               selectedDay={selectedDay}
-              day={day}
-              yearmonth={month}
+               day={day}
+               yearmonth={month}
               setAvailability={setAvailibility}
             ></Day>
           ))}

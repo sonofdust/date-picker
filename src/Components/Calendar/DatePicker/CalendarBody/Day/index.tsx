@@ -22,10 +22,9 @@ export const Day = ({
     const availDate = `${moment(yearmonth).format("YYYY-MM")}-${day
       .toString()
       .padStart(2, "0")}`;
-
     setAvailDate(availDate);
     setSelected(availDate === selectedDay);
-  }, [day, yearmonth]);
+  }, [day, selectedDay]);
 
   const selectedStyles = selected
     ? {
