@@ -6,6 +6,8 @@ import { AvailabilityDate } from "./AvailabilityDate";
 import { AvailabilityShift } from "./AvailabilityShift";
 import { CalendarBody } from "./DatePicker/CalendarBody";
 import { TimePrefrence } from "./DatePicker/TimePrefrence";
+import { CalendarNavigation } from "./CalendarNavigation";
+
 export const DatePicker = () => {
   const [value, setValue] = useState<string>(moment().format("MMMM YYYY"));
   const [available, setAvailibility] = useState<string>(
@@ -30,28 +32,6 @@ export const DatePicker = () => {
     setCalandar(getCalendar(days, weekday));
   }, [value]);
 
-  const shiftMonth = (num: number) => {
-    setValue(moment(value).add(num, "month").format("MMMM YYYY"));
-  };
-
-  const CalendarNavigation = () => (
-    <div className="rTableRow">
-      <div className="rTableCell">
-        <div className="flex-container">
-          <span onClick={() => shiftMonth(-1)}>
-            <h3 className="hand">{"<"}</h3>
-          </span>
-          <h3>
-            {moment(value).format("MMMM") + " " + moment(value).format("YYYY")}
-          </h3>
-          <span onClick={() => shiftMonth(1)}>
-            <h3 className="hand">{">"}</h3>
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <Fragment>
       <div className="rTable">
@@ -63,7 +43,7 @@ export const DatePicker = () => {
         <div className="rTableRow">
           <div className="rTableCell">
             <div className="rTable">
-              <CalendarNavigation />
+              <CalendarNavigation setMonth={setValue} monthValue={value} />
               <CalendarBody
                 selectedDay={selectedDay}
                 month={value}
