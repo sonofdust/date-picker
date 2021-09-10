@@ -9,28 +9,26 @@ export const CalendarNavigation = ({
   monthValue: string;
 }) => (
   <div className="rTableRow">
-    <div className="rTableCell">
-      <div className="flex-container">
-        <span
-          onClick={() =>
-            setMonth(moment(monthValue).add(-1, "month").format("MMMM YYYY"))
-          }
-        >
-          <h3 className="hand">{"<"}</h3>
-        </span>
-        <h3 data-testid = "Header">
-          {moment(monthValue).format("MMMM") +
-            " " +
-            moment(monthValue).format("YYYY")}
-        </h3>
-        <span
-          onClick={() =>
-            setMonth(moment(monthValue).add(1, "month").format("MMMM YYYY"))
-          }
-        >
-          <h3 className="hand">{">"}</h3>
-        </span>
-      </div>
+    <div className="flex-container">
+      <span
+        onClick={() =>
+          setMonth(moment(monthValue).add(-1, "month").format("MMMM YYYY"))
+        }
+      >
+        <h3 className="hand">{"<"}</h3>
+      </span>
+      <h3 data-testid="Header">
+        {moment(monthValue).format("MMMM") +
+          " " +
+          moment(monthValue).format("YYYY")}
+      </h3>
+      <span
+        onClick={() =>
+          setMonth(moment(monthValue).add(1, "month").format("MMMM YYYY"))
+        }
+      >
+        <h3 className="hand">{">"}</h3>
+      </span>
     </div>
   </div>
 );

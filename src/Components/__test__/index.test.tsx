@@ -35,7 +35,7 @@ test("Check calendar grid dimentions is 7X7.", () => {
   const children = component.container.querySelector("div");
   expect(children?.getElementsByClassName("rTableCell").length).toBe(49);
   expect(children?.getElementsByClassName("rTableRow").length).toBe(7);
-  const weeKdays = ["SUN","MON","TUE","WED","THU","FRI","SAT"];
+  // const weeKdays = ["SUN","MON","TUE","WED","THU","FRI","SAT"];
   // expect(children?.firstChild.array.every(e=>weeKdays.includes(e)))
           
   // expect (component.find("div.tcolgender").text()).toEqual("M").toHaveLength(1)

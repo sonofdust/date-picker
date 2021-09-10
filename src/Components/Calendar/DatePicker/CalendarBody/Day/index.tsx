@@ -55,7 +55,7 @@ export const Day = ({
           </span>
         </div>
       ) : (
-        <div className="hidden">{}</div>
+        <div className="hidden" />
       )}
     </div>
   );

@@ -30,10 +30,8 @@ export const DatePicker = () => {
     const days = moment(value).daysInMonth();
     const weekday = moment(value).add(0, "days").startOf("month").day();
     setCalandar(getCalendar(days, weekday));
-    if (selectedDay === "") {
-      setSelectedDay(moment().format("YYYY-MM-DD"));
-    }
-  }, [value, selectedDay]);
+       setSelectedDay(value);
+  }, [value ]);
 
   return (
     <Fragment>
