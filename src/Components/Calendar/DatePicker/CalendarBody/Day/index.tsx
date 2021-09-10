@@ -22,9 +22,10 @@ export const Day = ({
     const availDate = `${moment(yearmonth).format("YYYY-MM")}-${day
       .toString()
       .padStart(2, "0")}`;
+
     setAvailDate(availDate);
     setSelected(availDate === selectedDay);
-  }, [day, selectedDay]);
+  }, [day, yearmonth]);
 
   const selectedStyles = selected
     ? {
@@ -40,12 +41,13 @@ export const Day = ({
     : {};
 
   return (
-    <div className="rTableCell">
+    <div className="rTableCell" data-testid="cell">
       {day > 0 ? (
         <div
           onClick={() => setAvailability(availDate)}
           className={isBefore ? "day pastday noHover" : "day hand"}
           style={selectedStyles}
+          data-testid="cell"
         >
           <span className="text" style={selectedspan}>
             {day}
@@ -55,7 +57,7 @@ export const Day = ({
           </span>
         </div>
       ) : (
-        <div className="hidden" />
+        <div className="hidden">{}</div>
       )}
     </div>
   );

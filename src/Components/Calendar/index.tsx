@@ -13,10 +13,10 @@ export const DatePicker = () => {
   const [available, setAvailibility] = useState<string>(
     moment().format("YYYY-MM-DD")
   );
-  // const [selectedDay, setSelectedDay] = useState(moment().format("YYYY-MM-DD"));
-  const [selectedDay, setSelectedDay] = useState("");
+  const [selectedDay, setSelectedDay] = useState(moment().format("YYYY-MM-DD"));
   const [shift, setShift] = useState<string>("0");
   const [calendar, setCalandar] = useState<number[][]>([]);
+  // const [timePreference, setTimePrefrence] = useState(false);
 
   const getCalendar = (days: number, weekday: number, count = 0) =>
     Array.from({ length: 6 }, (e) => Array.from({ length: 7 }, (e) => 0)).map(
@@ -30,8 +30,7 @@ export const DatePicker = () => {
     const days = moment(value).daysInMonth();
     const weekday = moment(value).add(0, "days").startOf("month").day();
     setCalandar(getCalendar(days, weekday));
-       setSelectedDay(value);
-  }, [value ]);
+  }, [value]);
 
   return (
     <Fragment>
@@ -47,7 +46,7 @@ export const DatePicker = () => {
               <CalendarNavigation setMonth={setValue} monthValue={value} />
               <CalendarBody
                 selectedDay={selectedDay}
-                 month={value}
+                month={value}
                 setAvailibility={(date: string) => {
                   setAvailibility(date);
                   setSelectedDay(date);
