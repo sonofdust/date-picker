@@ -3,6 +3,7 @@ import moment from "moment";
 import "./index.scss";
 
 import { Day } from "./Day";
+import React from "react";
 
 export const CalendarBody = ({
   month,
