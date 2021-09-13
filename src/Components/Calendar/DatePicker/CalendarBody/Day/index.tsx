@@ -1,6 +1,7 @@
 import moment from "moment";
 import "./index.scss";
 import { useState, useEffect } from "react";
+import React from "react";
 
 export const Day = ({
   selectedDay,

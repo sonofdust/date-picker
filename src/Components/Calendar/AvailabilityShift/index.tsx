@@ -1,6 +1,7 @@
 import "./index.scss";
 import { PiChart } from "./PiChart";
 import { useState } from "react";
+import React from "react";
 
 interface ICalendarAvailabilityProps {
   setShift: string;

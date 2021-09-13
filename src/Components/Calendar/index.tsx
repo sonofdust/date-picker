@@ -7,6 +7,7 @@ import { AvailabilityShift } from "./AvailabilityShift";
 import { CalendarBody } from "./DatePicker/CalendarBody";
 import { TimePrefrence } from "./DatePicker/TimePrefrence";
 import { CalendarNavigation } from "./CalendarNavigation";
+import React from "react";
 
 export const DatePicker = () => {
   const [value, setValue] = useState<string>(moment().format("MMMM YYYY"));
