@@ -19,7 +19,7 @@ export const AvailabilityShift = (props: ICalendarAvailabilityProps) => {
           <PiChart
             text={"6am to 9am"}
             fraction={"2/4"}
-            strClass={"chart1"}
+            strClass={"chart4"}
           ></PiChart>
           <PiChart
             text={"9am to 12pm"}

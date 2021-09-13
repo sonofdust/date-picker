@@ -60,11 +60,7 @@ export const DatePicker = () => {
           </div>
           <div>
             <AvailabilityDate stringDate={available} />
-            <AvailabilityShift
-              setShift={shift}
-              // isPreference={timePreference}
-              // setPrefrence={(boolval:boolean)=>{setTimePrefrence(boolval);}}
-            />
+            <AvailabilityShift setShift={shift} />
           </div>
         </div>
       </div>

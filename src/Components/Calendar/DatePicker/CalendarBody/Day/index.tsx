@@ -41,15 +41,14 @@ export const Day = ({
     : {};
 
   return (
-    <div className="rTableCell" data-testid="cell">
+    <div className="rTableCell">
       {day > 0 ? (
         <div
           onClick={() => setAvailability(availDate)}
           className={isBefore ? "day pastday noHover" : "day hand"}
           style={selectedStyles}
-          data-testid="cell"
         >
-          <span className="text" style={selectedspan}>
+          <span className="text" style={selectedspan} data-testid = {"day"}>
             {day}
           </span>
           <span className="text2" style={selectedspan}>
