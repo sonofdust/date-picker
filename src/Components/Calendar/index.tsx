@@ -7,7 +7,17 @@ import { AvailabilityShift } from "./AvailabilityShift";
 import { CalendarBody } from "./DatePicker/CalendarBody";
 import { TimePrefrence } from "./DatePicker/TimePrefrence";
 import { CalendarNavigation } from "./CalendarNavigation";
-import React from "react";
+
+const Grid = Array.from({ length: 6 }, (e) =>
+  Array.from({ length: 7 }, (e) => 0)
+).map((row, i) => row.map((e, j) => 0));
+
+export const getCalendar = (days: number, weekday: number, count = 0) =>
+  Grid.map((row, i) =>
+    row.map((e, j) =>
+      row.length * i + j >= weekday && days > count ? ++count : e
+    )
+  );
 
 export const DatePicker = () => {
   const [value, setValue] = useState<string>(moment().format("MMMM YYYY"));
@@ -18,17 +28,11 @@ export const DatePicker = () => {
   const [shift, setShift] = useState<string>("0");
   const [calendar, setCalandar] = useState<number[][]>([]);
 
-  const getCalendar = (days: number, weekday: number, count = 0) =>
-    Array.from({ length: 6 }, (e) => Array.from({ length: 7 }, (e) => 0)).map(
-      (row, i) =>
-        row.map((e, j) =>
-          row.length * i + j >= weekday && days > count ? ++count : e
-        )
-    );
-
   useEffect(() => {
     const days = moment(value).daysInMonth();
     const weekday = moment(value).add(0, "days").startOf("month").day();
+    let count = 0;
+    console.log(days, weekday)
     setCalandar(getCalendar(days, weekday));
   }, [value]);
 

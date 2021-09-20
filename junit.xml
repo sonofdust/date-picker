@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="10" failures="0" errors="0" time="28.615">
+  <testsuite name="Testing Calendar Body" errors="0" failures="0" skipped="0" timestamp="2021-09-20T19:02:52" time="7.324" tests="1">
+    <testcase classname="Testing Calendar Body should increment counter" name="Testing Calendar Body should increment counter" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Testing day Component" errors="0" failures="0" skipped="0" timestamp="2021-09-20T19:02:51" time="12.227" tests="2">
+    <testcase classname="Testing day Component If day greater than zero render calendar cell with value of Day." name="Testing day Component If day greater than zero render calendar cell with value of Day." time="0.154">
+    </testcase>
+    <testcase classname="Testing day Component If day equal zero render calendar cell with no value." name="Testing day Component If day equal zero render calendar cell with no value." time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2021-09-20T19:02:51" time="11.974" tests="1">
+    <testcase classname=" Renders with correct header data." name=" Renders with correct header data." time="0.11">
+    </testcase>
+  </testsuite>
+  <testsuite name="Testing Calander function" errors="0" failures="0" skipped="0" timestamp="2021-09-20T19:02:51" time="12.679" tests="6">
+    <testcase classname="Testing Calander function should test calendar row length" name="Testing Calander function should test calendar row length" time="0.003">
+    </testcase>
+    <testcase classname="Testing Calander function should test calendar column length" name="Testing Calander function should test calendar column length" time="0.001">
+    </testcase>
+    <testcase classname="Testing Calander function should test calendar cell count" name="Testing Calander function should test calendar cell count" time="0.001">
+    </testcase>
+    <testcase classname="Testing Calander function test start day" name="Testing Calander function test start day" time="0.002">
+    </testcase>
+    <testcase classname="Testing Calander function test end day" name="Testing Calander function test end day" time="0">
+    </testcase>
+    <testcase classname="Testing Calander function test progressing of dates 1,2,3...30" name="Testing Calander function test progressing of dates 1,2,3...30" time="0">
+    </testcase>
+  </testsuite>
+</testsuites>
